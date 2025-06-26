@@ -1,0 +1,19 @@
+{
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "HighCPUUsage",
+        "severity": "critical",
+        "instance": "web-server-1",
+        "service": "user-service"
+      },
+      "annotations": {
+        "summary": "CPU usage is above 80% for 5 minutes",
+        "description": "Pod 'user-service' has CPU > 80% for over 5 mins"
+      },
+      "startsAt": "2025-06-25T10:00:00Z"
+    }
+  ]
+}
+
