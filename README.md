@@ -1,6 +1,6 @@
 # AI Incident Triage Assistant
 
-This simple project demonstrates receiving a Prometheus AlertManager payload,
+This project demonstrates receiving a Prometheus AlertManager payload,
 using OpenAI to generate a possible root cause and fix, and sending the summary
 to Slack.
 
