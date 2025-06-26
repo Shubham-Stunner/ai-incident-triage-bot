@@ -30,7 +30,7 @@ def process_alert_with_ai(alert_data: dict) -> dict:
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,
         )
