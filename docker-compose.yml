@@ -20,3 +20,47 @@ services:
     image: prom/node-exporter
     ports:
       - "9100:9100"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+      - loki
+      - tempo
+
+  loki:
+    image: grafana/loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+
+  tempo:
+    image: grafana/tempo
+    command: ["-config.file=/etc/tempo/local.yaml"]
+    ports:
+      - "3200:3200"
+      - "4317:4317"
+
+  otel-collector:
+    image: otel/opentelemetry-collector:0.86.0
+    command: ["--config=/etc/otel-config.yaml"]
+    volumes:
+      - ./otel-config.yaml:/etc/otel-config.yaml
+    ports:
+      - "4317:4317"
+
+  bot:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - alertmanager
+      - prometheus
+      - loki
+      - tempo
+      - otel-collector
+

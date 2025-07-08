@@ -6,5 +6,5 @@ route:
 
 receivers:
   - name: 'triage-bot'
-    webhook_configs:
-      - url: 'http://172.17.0.1:8000/alert'
+    webhook_configs:      - url: 'http://bot:8000/alert'
+
