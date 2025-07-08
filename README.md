@@ -1,8 +1,6 @@
 # AI Incident Triage Assistant
 
-This project demonstrates receiving a Prometheus AlertManager payload,
-using OpenAI to generate a possible root cause and fix, and sending the summary
-to Slack.
+This project demonstrates receiving a Prometheus AlertManager payload, using OpenAI to generate a possible root cause and fix, and sending the summary to Slack.
 
 ## Setup
 
@@ -10,8 +8,7 @@ to Slack.
    ```bash
    pip install -r requirements.txt
    ```
-2. Copy `.env.example` to `.env` and fill in your OpenAI API key and Slack
-   webhook URL.
+2. Copy `.env.example` to `.env` and fill in your OpenAI API key and Slack webhook URL.
 
 ## Running
 
