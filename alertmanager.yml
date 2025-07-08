@@ -1,0 +1,10 @@
+global:
+  resolve_timeout: 1m
+
+route:
+  receiver: 'triage-bot'
+
+receivers:
+  - name: 'triage-bot'
+    webhook_configs:
+      - url: 'http://172.17.0.1:8000/alert'
